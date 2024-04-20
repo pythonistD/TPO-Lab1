@@ -34,8 +34,6 @@ public class Task2Test {
             assertEquals(expectedResult, distances);
         }
         static class GraphAndAnswerProvider implements ArgumentsProvider {
-
-
             @Override
             public Stream<? extends Arguments> provideArguments(ExtensionContext context){
                 return Stream.of(
@@ -63,6 +61,14 @@ public class Task2Test {
 
             }
 
+        }
+
+        @Test
+        public void oneNodeGraphTest(){
+            Dijkstra dijkstra = new Dijkstra(new Node("0"));
+            dijkstra.run();
+            Map<String, Integer> distances = dijkstra.printShortestPath();
+            assertEquals(Map.of("0", 0), distances);
         }
     }
     @Nested

@@ -18,15 +18,7 @@ public class Task3Test {
 
     @Nested
     public class WhaleTest{
-
-        //private Whale whale;
         private Planet planet = new Planet(9.8f, "Earth", 13000);
-
-        /*@BeforeEach
-        void init(){
-            whale = new Whale("Whale", WhaleType.CACHALOT, 2, planet.getDistanceToStratosphere(),
-                    1);
-        }*/
         @Test
         @DisplayName("Negative time of falling")
         void checkWhaleConstructor(){

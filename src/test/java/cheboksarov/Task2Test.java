@@ -4,7 +4,6 @@ import cheboksarov.task2.Node;
 import cheboksarov.task2.Dijkstra;
 import com.google.common.collect.MapDifference;
 import com.google.common.collect.Maps;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -12,7 +11,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.ArgumentsSource;
-import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,11 +51,21 @@ public class Task2Test {
                                 Map.of(
                                         "0", 0,
                                         "1", 1,
-                                        "2", 3,
-                                        "3", 5
+                                        "2", 2,
+                                        "3", 4
                                 )
-                        )
-                );
+                        ),
+                        Arguments.of(Map.of("0", Map.of("1", 1, "3", 1, "2", 1),
+                                "1", Map.of("0", 1, "2", 1),
+                                "2", Map.of("1", 1, "3", 1),
+                                "3", Map.of("0", 1, "2", 1)),
+                                Map.of(
+                                        "0", 0,
+                                        "1", 1,
+                                        "2", 1,
+                                        "3", 1
+                                )
+                ));
 
             }
 

@@ -18,6 +18,9 @@ public class Task1 {
     }
 
     public static BigDecimal factorialUsingIteration(int n) throws IllegalArgumentException {
+        if (n < 0){
+            throw new IllegalArgumentException("n must be positive");
+        }
         BigDecimal result = BigDecimal.valueOf(1);
         for (int i = 2; i <= n; i++) {
             result = result.multiply(BigDecimal.valueOf(i));

@@ -2,26 +2,20 @@ package cheboksarov.task3;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import static java.lang.Math.sqrt;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Planet {
     private Float g; //gravitational constant
     private String name;
     private Integer distanceToStratosphere;
 
-    public Planet(Float g, String name, Integer distanceToStratosphere) {
-        this.g = g;
-        this.name = name;
-        this.distanceToStratosphere = distanceToStratosphere;
-    }
-
-    public Planet(){
-
-    }
 
     /*public void fallingOfWhale(Whale whale){
         Integer initialHeight = whale.getHeight();

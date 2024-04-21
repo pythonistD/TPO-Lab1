@@ -1,6 +1,5 @@
 package cheboksarov.task3;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,17 +7,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static java.lang.Math.round;
-
 public class Whale {
+    @Getter
+    @Setter
     private String name;
+    @Getter
+    @Setter
     private WhaleType whaleType;
     private final List<String> thoughtList;
+    @Getter
     private final Integer thinkRate;
+    @Getter
     private Integer height;
+    @Getter
+    @Setter
     private Integer health;
     private Integer durability;
+    @Getter
     private WhaleStatus status;
+    @Getter
     private Integer damageRate;
 
     public Whale(String name, WhaleType whaleType, Integer thinkRate,
@@ -37,8 +44,6 @@ public class Whale {
         this.damageRate = height/(durability*5) * 10;
     }
 
-    /*public Whale(){
-    }*/
 
     public List<String> whatWhaleThoughtWhenFalling(Integer timeOfFalling) throws IllegalArgumentException{
         if (timeOfFalling < 0) {
@@ -77,17 +82,6 @@ public class Whale {
         return health > 0;
     }
 
-    public Integer getHeight(){return height;}
-
-    public WhaleStatus getStatus(){
-       return status;
-    }
-
-    public Integer getDamageRate(){
-        return damageRate;
-    }
-
-
 
     public List<String> getFullListOfWhaleThoughts(){
         return new ArrayList<String>(Arrays.asList(
@@ -114,34 +108,6 @@ public class Whale {
         ));
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public WhaleType getWhaleType() {
-        return whaleType;
-    }
-
-    public void setWhaleType(WhaleType whaleType) {
-        this.whaleType = whaleType;
-    }
-
-
-    public Integer getThinkRate() {
-        return thinkRate;
-    }
-
-    public Integer getHealth() {
-        return health;
-    }
-
-    public void setHealth(Integer health) {
-        this.health = health;
-    }
 
     public void setHeight(int i) {
         height = i;

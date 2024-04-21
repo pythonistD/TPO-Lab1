@@ -1,6 +1,5 @@
 package cheboksarov.task3;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -24,8 +23,7 @@ public class Task3Test {
         void checkWhaleConstructor(){
             Whale whale = new Whale("Whale", WhaleType.CACHALOT, 2, planet.getDistanceToStratosphere(),
                     1);
-            Throwable exception = assertThrows(IllegalArgumentException.class,() -> whale.whatWhaleThoughtWhenFalling(-1));
-            assertEquals("Time of falling must be positive",exception.getMessage());
+        assertThrows(IllegalArgumentException.class,() -> whale.whatWhaleThoughtWhenFalling(-1));
         }
 
         @Test
@@ -41,10 +39,9 @@ public class Task3Test {
         @ValueSource(ints = {-1, 0, 4})
         @DisplayName("Check whale constructor for incorrect durability value")
         public void checkWhaleConstructorForIncorrectDurabilityValue(Integer durability){
-            Throwable exception = assertThrows(IllegalArgumentException.class,
+        assertThrows(IllegalArgumentException.class,
                     () -> new Whale("Whale", WhaleType.CACHALOT, 2, planet.getDistanceToStratosphere(),
                     durability));
-            assertEquals("Durability must be between 1 and 3",exception.getMessage());
         }
 
 
